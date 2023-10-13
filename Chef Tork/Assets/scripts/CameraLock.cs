@@ -1,3 +1,5 @@
+
+
 using UnityEngine;
 using Cinemachine;
 
@@ -7,8 +9,11 @@ using Cinemachine;
 [ExecuteInEditMode]
 [SaveDuringPlay]
 [AddComponentMenu("")] // Hide in menu
+
+
 public class cameralock : CinemachineExtension
 {
+   
     [Tooltip("Lock the camera's Y position to this value")]
     public float m_YPosition = 0;
 
@@ -23,4 +28,6 @@ public class cameralock : CinemachineExtension
             state.RawPosition = pos;
         }
     }
+
 }
+
