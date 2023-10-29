@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
 
-    //public Animator animatior;
+    public Animator anim;
     //for attack animation^
 
     public Transform meleePoint;
@@ -29,7 +29,7 @@ public class PlayerCombat : MonoBehaviour
 
     void Melee()
     {
-        //Animator.SetTrigger("Melee");
+        anim.SetTrigger("Melee");
         //for attack animation^
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(meleePoint.position, meleeRange, enemyLayers);

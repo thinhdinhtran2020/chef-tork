@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 50c1789fc3c792b4e838f9a75d455f84
+guid: 2acd48b0ff2e06544940cb69eff5e64e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 40
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BibbyWalk(fixed)_0
+      name: tork_melee_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 50
-        height: 50
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,83 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7713690be6539854e95d78a8f7829fb9
-      internalID: -420426164
+      spriteID: 30c266693bcf73a4ca7fb68d0aeed39c
+      internalID: 1278172712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BibbyWalk(fixed)_1
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 0
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd5f4c3fb258edc428fafb02fd039b52
-      internalID: 1496274061
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BibbyWalk(fixed)_2
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 0
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ba05d12a3472bc499363855ff0ac65f
-      internalID: 1835726262
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BibbyWalk(fixed)_3
-      rect:
-        serializedVersion: 2
-        x: 150
-        y: 0
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bfa77f1c5ced9d24bbc7c480f88a6c35
-      internalID: 566839674
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BibbyWalk(fixed)_4
+      name: tork_melee_1
       rect:
         serializedVersion: 2
         x: 200
         y: 0
-        width: 50
-        height: 50
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 642d4b279c65a204590575f36994fa84
-      internalID: -46036064
+      spriteID: a12fb72fb8ad8f7489177b87cda36e16
+      internalID: 998538021
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BibbyWalk(fixed)_5
+      name: tork_melee_2
       rect:
         serializedVersion: 2
-        x: 250
+        x: 400
         y: 0
-        width: 50
-        height: 50
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,8 +179,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 802c690df0167fc43b75c12e647fef23
-      internalID: -1326144978
+      spriteID: e93f556d28d021244955a5d03d8ec9a4
+      internalID: -1010768525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tork_melee_3
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41e002524f8fb814082b713bcb2ba342
+      internalID: -1238736564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tork_melee_4
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415b283eb239b2740a63d3167f3b1d37
+      internalID: -1297703152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tork_melee_5
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 533f3752c63adcf4d97d67a151789c47
+      internalID: 161052737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tork_melee_6
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d912614ee9269534ebe2713b699f8f27
+      internalID: 1713774039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tork_melee_7
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4920c6650ed48284aa5e768a5716e429
+      internalID: -162396205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tork_melee_8
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ada2d1b8bd601994486c2fc6e7cd432b
+      internalID: -1583990141
       vertices: []
       indices: 
       edges: []
@@ -259,12 +322,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BibbyWalk(fixed)_0: -420426164
-      BibbyWalk(fixed)_1: 1496274061
-      BibbyWalk(fixed)_2: 1835726262
-      BibbyWalk(fixed)_3: 566839674
-      BibbyWalk(fixed)_4: -46036064
-      BibbyWalk(fixed)_5: -1326144978
+      tork_melee_0: 1278172712
+      tork_melee_1: 998538021
+      tork_melee_2: -1010768525
+      tork_melee_3: -1238736564
+      tork_melee_4: -1297703152
+      tork_melee_5: 161052737
+      tork_melee_6: 1713774039
+      tork_melee_7: -162396205
+      tork_melee_8: -1583990141
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aa7e924e16ac4e54e9013bbdb4057006
+guid: 0680760e3adf00644966dfae774dbac6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 40
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bibbyJump_0
+      name: tork_idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 50
-        height: 50
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,83 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4193b5b2f7ee4e4bb76e46068acecfb
-      internalID: 1350486031
+      spriteID: bd81afee76829a6428b942994d237e1a
+      internalID: 579823238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bibbyJump_1
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 0
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 017afaff6d6af794796e8a632cbc5dba
-      internalID: -1563084985
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bibbyJump_2
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 0
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b1229cdd07927d44b583bf23c52d017
-      internalID: 1929575311
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bibbyJump_3
-      rect:
-        serializedVersion: 2
-        x: 150
-        y: 0
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: af546734e1d785449b32d6251ef8a705
-      internalID: -74961888
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bibbyJump_4
+      name: tork_idle_1
       rect:
         serializedVersion: 2
         x: 200
         y: 0
-        width: 50
-        height: 50
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1640db528177a1346b354a7011a0c895
-      internalID: -993876086
+      spriteID: 75fdd68e524728b4bbe964ef4302a46f
+      internalID: 1274674141
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bibbyJump_5
+      name: tork_idle_2
       rect:
         serializedVersion: 2
-        x: 250
+        x: 400
         y: 0
-        width: 50
-        height: 50
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 726bfc156e6ac2e428781a55bb93c4af
-      internalID: -1854208892
+      spriteID: 2488cd40216410c46a680b26177bb797
+      internalID: -676592185
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bibbyJump_6
+      name: tork_idle_3
       rect:
         serializedVersion: 2
-        x: 300
+        x: 600
         y: 0
-        width: 50
-        height: 50
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb09dbb1f76648a4bbb0882f127f2f5e
-      internalID: 636549127
+      spriteID: 1698138aa0c27b34d8d2b2bed617100d
+      internalID: 1749544915
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bibbyJump_7
+      name: tork_idle_4
       rect:
         serializedVersion: 2
-        x: 350
+        x: 800
         y: 0
-        width: 50
-        height: 50
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,8 +221,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2eb09293808dffe4885b18d74c8dea14
-      internalID: 2042098334
+      spriteID: 5aa47cc8aa9fefb48a0e218aededd052
+      internalID: 1527839973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tork_idle_5
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5144b2aecc20ddc4db88d233e98c20a3
+      internalID: 689959466
       vertices: []
       indices: 
       edges: []
@@ -301,14 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bibbyJump_0: 1350486031
-      bibbyJump_1: -1563084985
-      bibbyJump_2: 1929575311
-      bibbyJump_3: -74961888
-      bibbyJump_4: -993876086
-      bibbyJump_5: -1854208892
-      bibbyJump_6: 636549127
-      bibbyJump_7: 2042098334
+      tork_idle_0: 579823238
+      tork_idle_1: 1274674141
+      tork_idle_2: -676592185
+      tork_idle_3: 1749544915
+      tork_idle_4: 1527839973
+      tork_idle_5: 689959466
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

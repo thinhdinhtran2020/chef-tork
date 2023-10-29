@@ -359,7 +359,7 @@ Transform:
   m_GameObject: {fileID: 197601941}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.654, y: -1.55, z: 0}
+  m_LocalPosition: {x: 0.56, y: -1.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6770,8 +6770,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35cc6720bb253f499b179eeaa10bd28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 1796217704}
   meleePoint: {fileID: 197601942}
-  meleeRange: 1.07
+  meleeRange: 0.35
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
