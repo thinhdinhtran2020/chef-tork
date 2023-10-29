@@ -13,17 +13,20 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask enemyLayers;
     public int attackDamage = 40;
 
-    public float meleeRate = 2f;
+    public float meleeRate = 60f;
     float nextMeleeTime = 0f;
 
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Z))
+        if (Time.time >= nextMeleeTime)
         {
-            Melee();
-            nextMeleeTime = Time.time + 1f / meleeRate;
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                Melee();
+                nextMeleeTime = Time.time + 1f / meleeRate;
+            }
         }
     }
 
