@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     public float jumpStrength = 5f;
 
     TouchingDirections touchingDirections;
- 
 
     public float currentMoveSpeed
     {
@@ -103,7 +102,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-       // transform.Translate(Vector2.right * (currentMoveSpeed * Time.deltaTime)); //this makes Bibby automatically walk to the right
 
         rb.velocity = new Vector2(moveInput.x * currentMoveSpeed, rb.velocity.y);
     }
