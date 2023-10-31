@@ -47,8 +47,12 @@ public class PlayerController : MonoBehaviour
         }
         private set
         {
-            _isMoving = value;
-            animator.SetBool(AnimationStrings.isMoving, value);
+            if (GameIsPaused == false)
+            {
+                _isMoving = value;
+                animator.SetBool(AnimationStrings.isMoving, value);
+            }
+            else { return; } 
         }
     }
 
@@ -88,16 +92,45 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private Rigidbody2D rb2d;
+    private Animator[] animators;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
+
+    bool GameIsPaused = false; 
+
+    public GameObject PauseMenu;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (GameIsPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+
+        }
+    }
+    void Resume()
+    {
+        GameIsPaused = false;
+
+    }
+
+    void Pause()
+    {
+        GameIsPaused = true;
     }
 
     private void FixedUpdate()
@@ -120,28 +153,36 @@ public class PlayerController : MonoBehaviour
 
     private void SetFacingDirection(Vector2 moveInput)
     {
-        if (moveInput.x > 0 && !IsFacingRight)
+        if (GameIsPaused == false)
         {
-            //face right
-            IsFacingRight = true;
+            if (moveInput.x > 0 && !IsFacingRight)
+            {
+                //face right
+                IsFacingRight = true;
+            }
+            else if (moveInput.x < 0 && IsFacingRight)
+            {
+                //face left
+                IsFacingRight = false;
+            }
         }
-        else if (moveInput.x < 0 && IsFacingRight)
-        {
-            //face left
-            IsFacingRight = false;
-        }
+    
+else { return; }
     }
 
     public void onRun(InputAction.CallbackContext context) //'context' regard the pressing of a keyboard button here
     {
-        if (context.started) //button is pressed down
-        {
-            IsRunning = true;
-        }
-        else if (context.canceled) //button is released
-        {
-            IsRunning = false;
-        }
+
+      
+            if (context.started) //button is pressed down
+            {
+                IsRunning = true;
+            }
+            else if (context.canceled) //button is released
+            {
+                IsRunning = false;
+            }
+        
     }
 
     public void OnJump(InputAction.CallbackContext context)
