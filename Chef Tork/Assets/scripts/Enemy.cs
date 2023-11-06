@@ -9,9 +9,10 @@ public class Enemy : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
     public GameObject Entity;
+    public Transform target;
+    public Collider2D coll;
 
     [SerializeField] FloatingHealthBar healthBar;
-
 
     // Start is called before the first frame update
     void Start()
