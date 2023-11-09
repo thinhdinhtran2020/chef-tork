@@ -1515,7 +1515,7 @@ GameObject:
   - component: {fileID: 362069282}
   - component: {fileID: 362069284}
   - component: {fileID: 362069283}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: DamageHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

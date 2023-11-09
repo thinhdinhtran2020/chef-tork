@@ -1,11 +1,14 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem.Processors;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
     private bool dead;
+    private int Respawn;
 
     private void Awake()
     {
@@ -19,7 +22,19 @@ public class Health : MonoBehaviour
         if(currentHealth <= 0 && !dead)
         {
             GetComponent<PlayerController>().enabled = false;
+
             dead = true;
+            StartCoroutine(DelayedRespawn());
+
+
+        }
+    }
+
+    public IEnumerator DelayedRespawn()
+    {
+        {
+            yield return new WaitForSeconds(1.0f); // Waits 1 seconds to respawn the player
+            SceneManager.LoadScene(Respawn);
         }
     }
 
