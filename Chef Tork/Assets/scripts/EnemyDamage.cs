@@ -11,7 +11,7 @@ public class SpikeDamage : MonoBehaviour
         if (collision.tag == "Player")
         {
             collision.GetComponent<Health>().TakeDamage(damage);
-            StartCoroutine(DelayedRespawn());
+            //StartCoroutine(DelayedRespawn()); do a check later to only execute this if health == 0
         }
     }
     public IEnumerator DelayedRespawn()
