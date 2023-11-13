@@ -40,7 +40,7 @@ public class Health : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Orange"))
+        if(collision.gameObject.CompareTag("Orange") && currentHealth < startingHealth)
         {
             currentHealth = Mathf.Clamp(currentHealth + 1, 0, startingHealth);
             Destroy(collision.gameObject);
