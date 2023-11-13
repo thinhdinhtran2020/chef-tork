@@ -18,7 +18,9 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        healthBar = GetComponentInChildren<FloatingHealthBar>(); 
+        Transform commonParent = transform.parent;
+
+        healthBar = commonParent.GetComponentInChildren<FloatingHealthBar>();
     }
 
     public void TakeDamage(int damage)
