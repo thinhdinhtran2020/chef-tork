@@ -38,7 +38,14 @@ public class Health : MonoBehaviour
             SceneManager.LoadScene(Respawn);
         }
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Orange"))
+        {
+            currentHealth = Mathf.Clamp(currentHealth + 1, 0, startingHealth);
+            Destroy(collision.gameObject);
+        }
+    }
     /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
