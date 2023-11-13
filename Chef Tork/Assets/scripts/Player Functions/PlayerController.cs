@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float walkSpeed = 6f;
     public float runSpeed = 10f;
     public float jumpStrength = 5f;
+    private bool canControl = true;
 
     TouchingDirections touchingDirections;
 
@@ -66,6 +67,30 @@ public class PlayerController : MonoBehaviour
         {
             _isRunning = value;
             animator.SetBool(AnimationStrings.isRunning, value);
+        }
+    }
+
+    public bool CanControl
+    {
+        get
+        {
+            return canControl;
+        }
+        set
+        {
+            canControl = value;
+        }
+    }
+
+    public bool IsDead
+    {
+        get
+        {
+            return animator.GetBool(AnimationStrings.death);
+        }
+        set
+        {
+            animator.SetBool(AnimationStrings.death, value);
         }
     }
 
@@ -141,6 +166,8 @@ public class PlayerController : MonoBehaviour
 
    public void OnMove(InputAction.CallbackContext context)
     {
+        if (!CanControl)
+            return;
 
         moveInput = context.ReadValue<Vector2>(); //this makes x and y movements
 
@@ -166,13 +193,13 @@ public class PlayerController : MonoBehaviour
                 IsFacingRight = false;
             }
         }
-    
-else { return; }
+        else { return; }
     }
 
     public void onRun(InputAction.CallbackContext context) //'context' regard the pressing of a keyboard button here
     {
-
+         if (!CanControl)
+            return;
       
             if (context.started) //button is pressed down
             {
@@ -187,11 +214,20 @@ else { return; }
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if(context.started && touchingDirections.IsGrounded)
+        if (!CanControl)
+            return;
+
+        if (context.started && touchingDirections.IsGrounded)
         {
             animator.SetTrigger(AnimationStrings.jump);
             rb.velocity = new Vector2(rb.velocity.x, jumpStrength);
         }
+    }
+
+    public void Die()
+    {
+        IsDead = true;
+        CanControl = false;
     }
 }
 

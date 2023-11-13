@@ -22,6 +22,7 @@ public class Health : MonoBehaviour
         if(currentHealth <= 0 && !dead)
         {
             GetComponent<PlayerController>().enabled = false;
+            GetComponent<PlayerController>().Die();
 
             dead = true;
             StartCoroutine(DelayedRespawn());
