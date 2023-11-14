@@ -15,20 +15,16 @@ public class Bullet : MonoBehaviour
         rb.velocity = transform.right * speed;
     }
 
-    void OnTriggerEnter2D (Collider2D hitInfo)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         // check to see what is being hit
-        Debug.Log(hitInfo.name);
+        Debug.Log(collision.name);
 
-        Enemy enemy = hitInfo.GetComponent<Enemy>();
-        if (enemy != null)
+        Enemy enemy = collision.GetComponent<Enemy>();
+        if (collision.gameObject.CompareTag("Mucus"))
         {
             enemy.TakeDamage(damage);
-            
+            Destroy(gameObject);
         }
-
-        Destroy(gameObject);
-
     }
-
 }

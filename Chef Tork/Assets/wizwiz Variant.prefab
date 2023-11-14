@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wizwiz Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7963336172671473413, guid: 152c4daa7a3c1264cb8c644d8c44f132, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
