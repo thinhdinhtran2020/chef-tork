@@ -16,6 +16,9 @@ public class PlayerCombat : MonoBehaviour
     public float meleeRate = 60f;
     float nextMeleeTime = 0f;
 
+    public Transform firePoint;
+    public GameObject bulletPrefab;
+
 
     // Update is called once per frame
     void Update()
@@ -27,6 +30,11 @@ public class PlayerCombat : MonoBehaviour
                 Melee();
                 nextMeleeTime = Time.time + 1f / meleeRate;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            Shoot();
         }
     }
 
@@ -41,6 +49,11 @@ public class PlayerCombat : MonoBehaviour
         {
             enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
         }
+    }
+
+    void Shoot()
+    {
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
 
     private void OnDrawGizmosSelected()
