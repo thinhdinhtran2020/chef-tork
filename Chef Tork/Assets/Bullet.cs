@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
         Debug.Log(collision.name);
 
         Enemy enemy = collision.GetComponent<Enemy>();
-        if (collision.gameObject.CompareTag("Mucus"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             enemy.TakeDamage(damage);
             Destroy(gameObject);
