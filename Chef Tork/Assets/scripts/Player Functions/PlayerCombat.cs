@@ -53,6 +53,7 @@ public class PlayerCombat : MonoBehaviour
 
     void Shoot()
     {
+        anim.SetTrigger("shoot");
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
 

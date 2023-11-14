@@ -12,5 +12,6 @@ internal class AnimationStrings
     internal static string isGrounded = "isGrounded";
     internal static string jump = "jump";
     internal static string death = "death";
+    internal static string shoot = "shoot";
 }
 
