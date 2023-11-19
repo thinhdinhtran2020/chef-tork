@@ -7,6 +7,7 @@ TagManager:
   - Orange
   - Mucus
   - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX

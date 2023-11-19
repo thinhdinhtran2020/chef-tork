@@ -13,6 +13,19 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb.velocity = transform.right * speed;
+
+        /*
+        if (moveInput.x < 0)
+        {
+            // If facing left, flip the object to the left
+            rb.velocity = -transform.right * speed;
+        }
+        else
+        {
+            // If facing right, move the object to the right
+            rb.velocity = transform.right * speed;
+        }
+        */
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -24,6 +37,11 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             enemy.TakeDamage(damage);
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Wall"))
+        {
             Destroy(gameObject);
         }
     }

@@ -1994,7 +1994,7 @@ GameObject:
   - component: {fileID: 518406500}
   m_Layer: 7
   m_Name: Enemy_slime1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3460,7 +3460,7 @@ GameObject:
   - component: {fileID: 856909938}
   m_Layer: 7
   m_Name: Enemy_slime2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4810,7 +4810,7 @@ GameObject:
   - component: {fileID: 1251724229}
   m_Layer: 7
   m_Name: Enemy_2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5234,7 +5234,7 @@ GameObject:
   - component: {fileID: 1377978783}
   m_Layer: 7
   m_Name: Enemy_slime3
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5605,7 +5605,7 @@ GameObject:
   - component: {fileID: 1386924097}
   m_Layer: 6
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
