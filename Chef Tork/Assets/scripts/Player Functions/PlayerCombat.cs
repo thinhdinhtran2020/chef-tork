@@ -19,6 +19,12 @@ public class PlayerCombat : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
 
+    private PlayerController playerController;
+
+    private void Awake()
+    {
+        playerController = GetComponent<PlayerController>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -54,7 +60,20 @@ public class PlayerCombat : MonoBehaviour
     void Shoot()
     {
         anim.SetTrigger("shoot");
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
+        GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Bullet bulletScript = bulletObject.GetComponent<Bullet>();
+
+        Vector2 shootDirection;
+        if(playerController.IsFacingRight)
+        {
+            shootDirection = Vector2.right;
+        }
+        else
+        {
+            shootDirection = Vector2.left;
+        }
+        bulletScript.Initialize(shootDirection);
     }
 
     private void OnDrawGizmosSelected()

@@ -6,27 +6,31 @@ public class Bullet : MonoBehaviour
 {
 
     public float speed = 20f;
-    public int damage = 5;
+    public int damage;
     public Rigidbody2D rb;
+    public SpriteRenderer spriteRenderer;
 
-    // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
-        rb.velocity = transform.right * speed;
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
-        /*
-        if (moveInput.x < 0)
+    public void Initialize(Vector2 direction)
+    {
+        rb.velocity = direction * speed;
+
+        if (direction.x < 0)
         {
-            // If facing left, flip the object to the left
-            rb.velocity = -transform.right * speed;
+            spriteRenderer.flipX = true;
         }
         else
         {
-            // If facing right, move the object to the right
-            rb.velocity = transform.right * speed;
+            spriteRenderer.flipX = false;
         }
-        */
     }
+
 
     void OnTriggerEnter2D(Collider2D collision)
     {
