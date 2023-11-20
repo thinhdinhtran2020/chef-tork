@@ -10,7 +10,6 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
     public SpriteRenderer spriteRenderer;
 
-
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();

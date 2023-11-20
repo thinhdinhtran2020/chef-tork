@@ -17,7 +17,8 @@ public class PlayerCombat : MonoBehaviour
     float nextMeleeTime = 0f;
 
     public Transform firePoint;
-    public GameObject bulletPrefab;
+ //   public GameObject bulletPrefab;
+    public GameObject[] bulletPrefabs;
 
     private PlayerController playerController;
 
@@ -61,7 +62,10 @@ public class PlayerCombat : MonoBehaviour
     {
         anim.SetTrigger("shoot");
 
-        GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject selectedBulletPrefab = bulletPrefabs[Random.Range(0, bulletPrefabs.Length)];
+
+        //  GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bulletObject = Instantiate(selectedBulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bulletScript = bulletObject.GetComponent<Bullet>();
 
         Vector2 shootDirection;

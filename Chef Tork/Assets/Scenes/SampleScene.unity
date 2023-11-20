@@ -12956,7 +12956,11 @@ MonoBehaviour:
   attackDamage: 40
   meleeRate: 2
   firePoint: {fileID: 1005115640}
-  bulletPrefab: {fileID: 5709918608874840495, guid: 7b741382fbbd8604aae1c5f70bd164bd, type: 3}
+  bulletPrefabs:
+  - {fileID: 5709918608874840495, guid: 7b741382fbbd8604aae1c5f70bd164bd, type: 3}
+  - {fileID: 8626922592648561697, guid: 688370dd91d3d5a44b7b0d47a176e4e0, type: 3}
+  - {fileID: 827530798852215236, guid: a9f5106b407722648b56eb05fa026a6e, type: 3}
+  - {fileID: 6104140079313895020, guid: 50eca8da5482311428c99090fac1da20, type: 3}
 --- !u!1 &1844342787
 GameObject:
   m_ObjectHideFlags: 0
