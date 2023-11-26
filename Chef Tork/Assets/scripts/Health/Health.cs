@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
+    public Animator anim;
+
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
     private bool dead;
@@ -17,19 +19,22 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float _damage)
     {
-        currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth); 
-
-        if(currentHealth <= 0 && !dead)
+        if (currentHealth == 1 && !dead)
         {
+            currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
             GetComponent<PlayerController>().enabled = false;
             GetComponent<PlayerCombat>().enabled = false;
             GetComponent<PlayerController>().Die();
-            
+
             dead = true;
             StartCoroutine(DelayedRespawn());
-
-
         }
+        else
+        {
+            anim.SetTrigger("hurt");
+            currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
+        }
+
     }
 
     public IEnumerator DelayedRespawn()
