@@ -11,6 +11,12 @@ public class Health : MonoBehaviour
     public float currentHealth { get; private set; }
     private bool dead;
     private int Respawn;
+    private CamShake shake;
+
+    private void Start()
+    {
+        shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<CamShake>();
+    }
 
     private void Awake()
     {
@@ -24,6 +30,7 @@ public class Health : MonoBehaviour
             currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
             GetComponent<PlayerController>().enabled = false;
             GetComponent<PlayerCombat>().enabled = false;
+            shake.CamShakey();
             GetComponent<PlayerController>().Die();
 
             dead = true;
@@ -31,6 +38,7 @@ public class Health : MonoBehaviour
         }
         else
         {
+            shake.CamShakey();
             anim.SetTrigger("hurt");
             currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
         }

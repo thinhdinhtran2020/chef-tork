@@ -8,6 +8,7 @@ TagManager:
   - Mucus
   - Enemy
   - Wall
+  - ScreenShake
   layers:
   - Default
   - TransparentFX
