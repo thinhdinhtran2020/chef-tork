@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Wall
   - ScreenShake
+  - Boss
   layers:
   - Default
   - TransparentFX
