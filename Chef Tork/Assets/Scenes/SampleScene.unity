@@ -5535,7 +5535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5538145a4e895341b021dde695fa4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 500
+  maxHealth: 40
   currentHealth: 0
   Entity: {fileID: 1279286195}
   target: {fileID: 1279286197}

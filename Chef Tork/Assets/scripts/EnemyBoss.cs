@@ -19,6 +19,8 @@ public class EnemyBoss : MonoBehaviour
     public GameObject player;
     public float displayDistance = 10.0f; // this value is the distance to activate the healthbar on UI
 
+    private bool isDead = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,16 +41,20 @@ public class EnemyBoss : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+        if (isDead)
+            return;
+
         currentHealth -= damage;
         slider.value = currentHealth / maxHealth * 100;
         Debug.Log(currentHealth);
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !isDead)
         {
+            isDead = true;
             anim.SetTrigger("sugar_death");
             StartCoroutine(DieWithBuffer());
         }
-        else
+        else if(currentHealth > 0)
         {
             // Play hurt animation
             anim.SetTrigger("sugar_hurt");
@@ -57,7 +63,9 @@ public class EnemyBoss : MonoBehaviour
 
     private IEnumerator DieWithBuffer()
     {
+        this.enabled = false;
         // Introduce a buffer time before calling Die()
+        GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(1.05f);
 
         Die();
@@ -65,12 +73,9 @@ public class EnemyBoss : MonoBehaviour
     void Die()
     {
         Debug.Log("enemy die");
-
         //animator.SetBool("IsDead", true);
 
         slider.gameObject.SetActive(false);
-        this.enabled = false;
-        GetComponent<Collider2D>().enabled = false;
         Entity.SetActive(false);
     }
 
