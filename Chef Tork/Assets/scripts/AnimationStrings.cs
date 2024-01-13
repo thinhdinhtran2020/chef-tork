@@ -15,5 +15,7 @@ internal class AnimationStrings
     internal static string shoot = "shoot";
     internal static string hurt = "hurt";
     internal static string hurtShake = "hurtShake";
+    internal static string sHurt = "sugar_hurt";
+    internal static string sDeath = "sugar_death";
 }
 

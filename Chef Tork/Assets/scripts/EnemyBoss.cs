@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class EnemyBoss : MonoBehaviour
     public GameObject Entity;
     public Transform target;
     public Collider2D coll;
+    public Animator anim;
 
     public Slider slider;
     public Image fill;
@@ -24,14 +26,27 @@ public class EnemyBoss : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        slider.value = currentHealth/maxHealth * 100;
+        slider.value = currentHealth / maxHealth * 100;
         Debug.Log(currentHealth);
-        // Play hurt animation
 
         if (currentHealth <= 0)
         {
-            Die();
+            anim.SetTrigger("sugar_death");
+            StartCoroutine(DieWithBuffer());
         }
+        else
+        {
+            // Play hurt animation
+            anim.SetTrigger("sugar_hurt");
+        }
+    }
+
+    private IEnumerator DieWithBuffer()
+    {
+        // Introduce a buffer time before calling Die()
+        yield return new WaitForSeconds(1.05f);
+
+        Die();
     }
     void Die()
     {

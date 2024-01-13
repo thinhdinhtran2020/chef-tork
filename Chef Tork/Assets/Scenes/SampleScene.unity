@@ -5540,6 +5540,7 @@ MonoBehaviour:
   Entity: {fileID: 1279286195}
   target: {fileID: 1279286197}
   coll: {fileID: 0}
+  anim: {fileID: 1279286198}
   slider: {fileID: 1171567026}
   fill: {fileID: 1135441655}
 --- !u!1 &1363583432
