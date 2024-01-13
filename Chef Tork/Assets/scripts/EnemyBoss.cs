@@ -16,13 +16,27 @@ public class EnemyBoss : MonoBehaviour
     public Slider slider;
     public Image fill;
 
+    public GameObject player;
+    public float displayDistance = 10.0f; // this value is the distance to activate the healthbar on UI
+
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        slider.gameObject.SetActive(false);
     }
 
-
+    private void Update()
+    {
+        if(Vector3.Distance(player.transform.position, transform.position) < displayDistance)
+        {
+            slider.gameObject.SetActive(true);
+        }
+        else
+        {
+            slider.gameObject.SetActive(false);
+        }
+    }
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -54,6 +68,7 @@ public class EnemyBoss : MonoBehaviour
 
         //animator.SetBool("IsDead", true);
 
+        slider.gameObject.SetActive(false);
         this.enabled = false;
         GetComponent<Collider2D>().enabled = false;
         Entity.SetActive(false);
