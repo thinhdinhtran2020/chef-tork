@@ -13,7 +13,7 @@ public class EnemyBoss : MonoBehaviour
     public Collider2D coll;
     public Animator anim;
 
-    public GameObject enemyPrefab;
+    
     public Transform spawnPoint;
 
     public Slider slider;
@@ -24,6 +24,10 @@ public class EnemyBoss : MonoBehaviour
 
     private float startTime;
     private float timerDuration = 5f;
+    public GameObject enemyPrefab;
+    public GameObject bossPlatforms;
+    private GameObject currentEnemy;
+    private int wave = 0;
 
     private bool isDead = false;
 
@@ -44,11 +48,30 @@ public class EnemyBoss : MonoBehaviour
 
             float elapsedTime = Time.time - startTime;
 
-            if (elapsedTime >= timerDuration)
+            
+            if (currentEnemy == null || !currentEnemy.activeSelf)
             {
-                anim.SetTrigger("sugar_wand");
-                Invoke("SpawnEnemies", 1f);
-                startTime = Time.time;
+                if (wave < 2)
+                {
+                    if (elapsedTime >= timerDuration)
+                    {
+                        anim.SetTrigger("sugar_wand");
+                        Invoke("SpawnEnemies", 1f);
+                        startTime = Time.time;
+                        wave++;
+                    }
+                }
+                else
+                {
+                    if (elapsedTime >= timerDuration)
+                    {
+                        anim.SetTrigger("sugar_wand");
+                        Invoke("SpawnPlatforms", 1f);
+                        startTime = Time.time;
+                        wave = 0;
+                    }
+                }
+                
             }
         }
         else
@@ -59,9 +82,15 @@ public class EnemyBoss : MonoBehaviour
 
     }
 
+    public void SpawnPlatforms()
+    {
+        bossPlatforms.SetActive(true);
+    }
+
     public void SpawnEnemies()
     {
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        currentEnemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        currentEnemy.SetActive(true);
     }
 
     public void TakeDamage(int damage)
