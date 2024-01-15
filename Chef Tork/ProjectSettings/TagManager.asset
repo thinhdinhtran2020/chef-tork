@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - ScreenShake
   - Boss
+  - Apple
   layers:
   - Default
   - TransparentFX
