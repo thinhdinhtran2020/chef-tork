@@ -15,7 +15,19 @@ public class AppleCollector : MonoBehaviour
         {
             Destroy(collision.gameObject);
             apples++;
-            applesCount.text = "Apples: " + apples;
+
+            if (apples < 10)
+            {
+                applesCount.text = "00" + apples;
+            }
+            else if (apples < 100)
+            {
+                applesCount.text = "0" + apples;
+            }
+            else if (apples < 1000)
+            {
+                applesCount.text = "" + apples;
+            }
         }
     }
 
