@@ -161,7 +161,7 @@ AnimatorController:
   m_Name: sugar_boss
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: throw
+  - m_Name: sugar_throw
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -257,7 +257,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: throw
+    m_ConditionEvent: sugar_throw
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5025454728084575888}
