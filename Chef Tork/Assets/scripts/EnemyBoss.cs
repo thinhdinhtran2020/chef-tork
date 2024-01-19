@@ -30,6 +30,8 @@ public class EnemyBoss : MonoBehaviour
     private int wave = 0;
 
     private bool isDead = false;
+    public Transform firePoint;
+    public GameObject[] bulletPrefabs;
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +69,16 @@ public class EnemyBoss : MonoBehaviour
                     {
                         anim.SetTrigger("sugar_wand");
                         Invoke("SpawnPlatforms", 1f);
+                        startTime = Time.time;
+                        wave = 4;
+                    }
+                }
+                if(wave == 4)
+                {
+                    if (elapsedTime >= timerDuration)
+                    {
+                        anim.SetTrigger("sugar_throw");
+                        Invoke("Shoot", 0.83f);
                         startTime = Time.time;
                         wave = 0;
                     }
@@ -131,6 +143,19 @@ public class EnemyBoss : MonoBehaviour
 
         slider.gameObject.SetActive(false);
         Entity.SetActive(false);
+    }
+
+    void Shoot()
+    {
+        //anim.SetTrigger("shoot");
+
+        GameObject selectedBulletPrefab = bulletPrefabs[Random.Range(0, bulletPrefabs.Length)];
+
+        //  GameObject bulletObject = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bulletObject = Instantiate(selectedBulletPrefab, firePoint.position, firePoint.rotation);
+        bossBullet bulletScript = bulletObject.GetComponent<bossBullet>();
+
+        bulletScript.Initialize(Vector2.left);
     }
 
 }
