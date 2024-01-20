@@ -40527,6 +40527,10 @@ PrefabInstance:
       propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1089110794877050760, guid: daf03b30a7a60e74ab6a0f9056e909dc, type: 3}
+      propertyPath: transitionTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3855450259373860352, guid: daf03b30a7a60e74ab6a0f9056e909dc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 211.40924
