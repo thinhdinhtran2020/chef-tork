@@ -19,5 +19,8 @@ internal class AnimationStrings
     internal static string sDeath = "sugar_death";
     internal static string sWand = "sugar_wand";
     internal static string sThrow = "sugar_throw";
+    internal static string melee1 = "Melee";
+    internal static string melee2 = "Melee2";
+    internal static string melee3 = "Melee3";
 }
 

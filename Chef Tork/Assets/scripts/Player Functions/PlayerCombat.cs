@@ -21,6 +21,9 @@ public class PlayerCombat : MonoBehaviour
     public GameObject[] bulletPrefabs;
 
     private PlayerController playerController;
+    private int comboMeleeCount = 0; //keeps track of player spamming melee button
+    private float meleeInputCooldown = 0.2f;
+    private float lastMeleeInputTime = 0f;
 
     private void Awake()
     {
@@ -30,14 +33,41 @@ public class PlayerCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Time.time >= nextMeleeTime)
         {
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                Melee();
+                if (Time.time - lastMeleeInputTime > meleeInputCooldown)
+                {
+                    // Reset the consecutive count if there was a delay in button presses
+                    comboMeleeCount = 1;
+                }
+                else
+                {
+                    comboMeleeCount++;
+                }
+
+                lastMeleeInputTime = Time.time;
+
+                // Play the corresponding melee animation based on the consecutive count
+                switch (comboMeleeCount)
+                {
+                    case 1:
+                        Melee("Melee");
+                        break;
+                    case 2:
+                        Melee("Melee2");
+                        break;
+                    case 3:
+                        Melee("Melee3");
+                        break;
+                }
+
                 nextMeleeTime = Time.time + 1f / meleeRate;
             }
         }
+
 
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -45,9 +75,10 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-    void Melee()
+    
+    void Melee(string animationTrigger)
     {
-        anim.SetTrigger("Melee");
+        anim.SetTrigger(animationTrigger);
         //for attack animation^
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(meleePoint.position, meleeRange, enemyLayers);
@@ -57,7 +88,7 @@ public class PlayerCombat : MonoBehaviour
             enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
         }
     }
-
+    
     void Shoot()
     {
         anim.SetTrigger("shoot");
