@@ -10,9 +10,31 @@ public class PlayerController : MonoBehaviour
     public float walkSpeed = 6f;
     public float runSpeed = 10f;
     public float jumpStrength = 5f;
-    private bool canControl = true;
+    public bool canControl = true;
 
     TouchingDirections touchingDirections;
+
+    public void SavePlayer()
+    {
+        SaveSystem.SavePlayer(this);
+    }
+
+    public void LoadPlayer()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+
+        walkSpeed = data.walkSpeed;
+        runSpeed = data.runSpeed;
+        jumpStrength = data.jumpStrength;
+        canControl = data.canControl;
+
+        Vector3 position;
+        position.x = data.position[0];
+        position.y = data.position[1];
+        position.z = data.position[2];
+        transform.position = position;
+
+    }
 
     public float currentMoveSpeed
     {
