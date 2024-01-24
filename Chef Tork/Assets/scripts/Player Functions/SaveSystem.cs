@@ -1,17 +1,18 @@
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine.SceneManagement;
 
 public static class SaveSystem{
 
     public static void SavePlayer(PlayerController playercontroller)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-
         string path = Application.persistentDataPath + "/player.lol";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        PlayerData data = new PlayerData(playercontroller);
+        int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        PlayerData data = new PlayerData(playercontroller, currentLevelIndex);
 
         formatter.Serialize(stream, data);
         stream.Close();
