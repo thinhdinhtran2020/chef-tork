@@ -148,6 +148,7 @@ public void SpawnPlatforms()
         if (currentHealth <= 0 && !isDead)
         {
             isDead = true;
+            SpawnPlatforms();
             anim.SetTrigger("sugar_death");
             StartCoroutine(DieWithBuffer());
         }
