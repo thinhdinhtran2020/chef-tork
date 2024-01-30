@@ -41,6 +41,7 @@ public class EnemyBoss : MonoBehaviour
         startTime = Time.time;
     }
 
+
     private void Update()
     {
 
@@ -57,6 +58,7 @@ public class EnemyBoss : MonoBehaviour
                 {
                     if (elapsedTime >= timerDuration)
                     {
+                        ApplyForceToPlayer();
                         anim.SetTrigger("sugar_wand");
                         Invoke("SpawnEnemies", 1f);
                         startTime = Time.time;
@@ -65,22 +67,32 @@ public class EnemyBoss : MonoBehaviour
                 }
                 else
                 {
-                    if (elapsedTime >= timerDuration)
+                    if (wave == 2 && elapsedTime >= timerDuration)
                     {
                         anim.SetTrigger("sugar_wand");
+                        ApplyForceToPlayer();
                         Invoke("SpawnPlatforms", 1f);
                         startTime = Time.time;
-                        wave = 4;
+                        wave++ ;
                     }
-                }
-                if(wave == 4)
-                {
-                    if (elapsedTime >= timerDuration)
+
+                    else if (wave == 3 && elapsedTime >= timerDuration)
                     {
+
                         anim.SetTrigger("sugar_throw");
                         Invoke("Shoot", 0.83f);
                         startTime = Time.time;
+                        wave++;
+
+                    }
+                   //  || (75 <= currentHealth / maxHealth * 100)
+                    else if ((wave == 4 && elapsedTime >= timerDuration))
+                    {
+                        anim.SetTrigger("sugar_wand");
+                        Invoke("DespawnPlatforms", 1f);
+                        startTime = Time.time;
                         wave = 0;
+
                     }
                 }
                 
@@ -94,9 +106,28 @@ public class EnemyBoss : MonoBehaviour
 
     }
 
-    public void SpawnPlatforms()
+    void ApplyForceToPlayer()
+    {
+
+        Rigidbody2D playerRigidbody = player.GetComponent<Rigidbody2D>();
+
+        
+            // Calculate the direction from the boss to the player
+            Vector2 forceDirection = (player.transform.position - transform.position).normalized;
+
+        // Apply the force to the player
+        playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, -1000);
+
+    }
+
+public void SpawnPlatforms()
     {
         bossPlatforms.SetActive(true);
+    }
+
+    public void DespawnPlatforms()
+    {
+        bossPlatforms.SetActive(false);
     }
 
     public void SpawnEnemies()
@@ -117,6 +148,7 @@ public class EnemyBoss : MonoBehaviour
         if (currentHealth <= 0 && !isDead)
         {
             isDead = true;
+            SpawnPlatforms();
             anim.SetTrigger("sugar_death");
             StartCoroutine(DieWithBuffer());
         }

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))]
 
 public class PlayerController : MonoBehaviour
@@ -10,9 +12,33 @@ public class PlayerController : MonoBehaviour
     public float walkSpeed = 6f;
     public float runSpeed = 10f;
     public float jumpStrength = 5f;
-    private bool canControl = true;
-
+    public bool canControl = true;
+    public Animator transition;
     TouchingDirections touchingDirections;
+
+    public void SavePlayer()
+    {
+        SaveSystem.SavePlayer(this);
+    }
+
+    public void LoadPlayer()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+
+        walkSpeed = data.walkSpeed;
+        runSpeed = data.runSpeed;
+        jumpStrength = data.jumpStrength;
+        canControl = data.canControl;
+
+        StartCoroutine(LoadLevel(data.levelIndex));
+    }
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(levelIndex);
+    }
 
     public float currentMoveSpeed
     {
