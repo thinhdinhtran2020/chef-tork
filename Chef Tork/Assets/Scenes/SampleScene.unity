@@ -38776,7 +38776,7 @@ GameObject:
   - component: {fileID: 1734968967}
   - component: {fileID: 1734968966}
   m_Layer: 5
-  m_Name: Settings
+  m_Name: Load Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
