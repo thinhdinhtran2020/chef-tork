@@ -153,7 +153,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    bool GameIsPaused = false; 
+    public bool GameIsPaused = false; 
 
     public GameObject PauseMenu;
 
@@ -173,7 +173,7 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-    void Resume()
+    public void Resume()
     {
         GameIsPaused = false;
 
