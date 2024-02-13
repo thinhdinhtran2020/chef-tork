@@ -39,12 +39,20 @@ public class Bullet : MonoBehaviour
         Enemy enemy = collision.GetComponent<Enemy>();
         
 
-        if(collision.gameObject.CompareTag("Boss"))
+        if (collision.gameObject.CompareTag("Boss"))
         {
             EnemyBoss boss = collision.GetComponent<EnemyBoss>();
+            EnemyBossCholesterol chboss = collision.GetComponent<EnemyBossCholesterol>();
+
             if (boss != null)
             {
                 boss.TakeDamage(damage);
+                Destroy(gameObject);
+            }
+
+            if (chboss != null)
+            {
+                chboss.TakeDamage(damage);
                 Destroy(gameObject);
             }
 

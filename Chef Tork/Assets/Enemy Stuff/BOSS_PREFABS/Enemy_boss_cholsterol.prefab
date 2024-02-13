@@ -94,3 +94,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f02df316a4e7b3458a1057e9c727702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  Entity: {fileID: 0}
+  target: {fileID: 0}
+  coll: {fileID: 0}
+  anim: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  slider: {fileID: 0}
+  fill: {fileID: 0}
+  player: {fileID: 0}
+  displayDistance: 10
+  enemyPrefab: {fileID: 0}
+  bossPlatforms: {fileID: 0}
+  firePoint: {fileID: 0}
+  bulletPrefabs: []

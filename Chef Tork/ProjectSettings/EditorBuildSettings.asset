@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Start Menu.unity
     guid: 70cc2b2d269d40b40b3822e3590ba25a
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Sugar Level.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Scene_Level2.unity
+    path: Assets/Scenes/cholesterol Level.unity
     guid: 294f13e1f294433499502cfc1eb92be3
   - enabled: 1
     path: Assets/Scenes/Scene_Level3.unity
