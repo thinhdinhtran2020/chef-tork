@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4069132741949785506
+--- !u!1 &5709918608874840495
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5980468411857761744}
-  - component: {fileID: 3270187200621165675}
+  - component: {fileID: 904542281239421206}
+  - component: {fileID: 3396308307372195323}
+  - component: {fileID: 2336883712462197264}
+  - component: {fileID: 6181782554383759964}
+  - component: {fileID: 7672284465965505209}
+  - component: {fileID: -373853452599750220}
   m_Layer: 0
-  m_Name: CholesterolBossProjectileGFX
+  m_Name: CholesterolBossProjectile2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5980468411857761744
+--- !u!4 &904542281239421206
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4069132741949785506}
+  m_GameObject: {fileID: 5709918608874840495}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.755, z: 2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 10.014, y: -3.15, z: 0}
+  m_LocalScale: {x: 2.4584, y: 2.4584, z: 2.4584}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 904542281239421206}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3270187200621165675
+--- !u!212 &3396308307372195323
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4069132741949785506}
+  m_GameObject: {fileID: 5709918608874840495}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 517837222, guid: 34e35b29885ce0640afaaef73c6eca14, type: 3}
+  m_Sprite: {fileID: 1553495647, guid: 8566153f393bed043b595ac4838207a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,42 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &5709918608874840495
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 904542281239421206}
-  - component: {fileID: 2336883712462197264}
-  - component: {fileID: 6181782554383759964}
-  - component: {fileID: 7672284465965505209}
-  - component: {fileID: 4334054434425472721}
-  m_Layer: 0
-  m_Name: CholesterolBossProjectile
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &904542281239421206
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5709918608874840495}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.014, y: -3.15, z: 5}
-  m_LocalScale: {x: 1.1708066, y: 1.1708066, z: 1.1708066}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5980468411857761744}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2336883712462197264
 Rigidbody2D:
   serializedVersion: 4
@@ -181,7 +149,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.35415596
+  m_Radius: 0.51474315
 --- !u!114 &7672284465965505209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,11 +162,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3078f4938ba8c95448ca11f3ec84cc13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  damage: 1
+  speed: 3
+  damage: 2
   rb: {fileID: 2336883712462197264}
   spriteRenderer: {fileID: 0}
---- !u!95 &4334054434425472721
+--- !u!95 &-373853452599750220
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -208,7 +176,7 @@ Animator:
   m_GameObject: {fileID: 5709918608874840495}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1a0f998662d798a4aaa3a0d1b30f6e20, type: 2}
+  m_Controller: {fileID: 9100000, guid: ea4d1b286e664514a806f134fe1bc747, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
