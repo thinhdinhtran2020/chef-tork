@@ -25,7 +25,9 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float _damage)
     {
-        if (currentHealth == 1 && !dead)
+        currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
+
+        if (currentHealth <= 0 && !dead)
         {
             currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
             GetComponent<PlayerController>().enabled = false;
@@ -40,9 +42,7 @@ public class Health : MonoBehaviour
         {
             shake.CamShakey();
             anim.SetTrigger("hurt");
-            currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
         }
-
     }
 
     public IEnumerator DelayedRespawn()
