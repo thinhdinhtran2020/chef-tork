@@ -82,11 +82,31 @@ public class PlayerCombat : MonoBehaviour
         //for attack animation^
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(meleePoint.position, meleeRange, enemyLayers);
-        
-        foreach(Collider2D enemy in hitEnemies)
+
+        foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+
+            Debug.Log("Hit Enemy: " + enemy.gameObject.name);
+
+            // Check if the enemy is an instance of EnemyBoss
+            if (enemy.GetComponent<EnemyBoss>() != null)
+            {
+                enemy.GetComponent<EnemyBoss>().TakeDamage(attackDamage);
+                Debug.Log("ENEMYBOSS NOT NULL");
+            }
+            else if(enemy.GetComponent<Enemy>() != null)
+            {
+                enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            }
         }
+
+        /*
+        foreach (Collider2D enemy in hitEnemies)
+        {
+           enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+           enemy.GetComponent<EnemyBoss>().TakeDamage(attackDamage);
+        }
+        */
     }
     
     void Shoot()

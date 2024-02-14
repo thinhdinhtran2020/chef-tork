@@ -1680,7 +1680,7 @@ GameObject:
   m_Layer: 0
   m_Name: MeleeHitboxLocation
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5862,7 +5862,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.11, y: -0.7, z: -10}
+  m_LocalPosition: {x: 183.31, y: -0.7, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12690,7 +12690,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 371999529
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 62b6585af689b9c4daf0d345755734c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -13483,7 +13483,7 @@ Transform:
   m_GameObject: {fileID: 1021889741}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.11, y: -0.7, z: -10}
+  m_LocalPosition: {x: 183.31, y: -0.7, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -37638,7 +37638,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 371999529
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 7c7a6943698fe094fa0836e09f6858df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -38573,7 +38573,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 371999529
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: be8accf0fce54ac42b4e03f504c69bf7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -42684,7 +42684,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 371999529
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 7c7a6943698fe094fa0836e09f6858df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -44640,7 +44640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4592068235714285683, guid: 71220aefc3bdb204daaaf96c0806109b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -36.11
+      value: 183.31
       objectReference: {fileID: 0}
     - target: {fileID: 4592068235714285683, guid: 71220aefc3bdb204daaaf96c0806109b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -45893,6 +45893,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_boss_sugar
       objectReference: {fileID: 0}
+    - target: {fileID: 2226616188321490557, guid: 51112b8ab29404c47885e62590a27a4b, type: 3}
+      propertyPath: Entity
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2226616188321490557, guid: 51112b8ab29404c47885e62590a27a4b, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2226616188321490557, guid: 51112b8ab29404c47885e62590a27a4b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2226616188321490557, guid: 51112b8ab29404c47885e62590a27a4b, type: 3}
+      propertyPath: maxHealth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323820463953054913, guid: 51112b8ab29404c47885e62590a27a4b, type: 3}
+      propertyPath: m_Size.x
+      value: 1.7826233
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323820463953054913, guid: 51112b8ab29404c47885e62590a27a4b, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.10029602
+      objectReference: {fileID: 0}
     - target: {fileID: 5515379854147039070, guid: 51112b8ab29404c47885e62590a27a4b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 185.98
@@ -45933,7 +45957,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2226616188321490557, guid: 51112b8ab29404c47885e62590a27a4b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
