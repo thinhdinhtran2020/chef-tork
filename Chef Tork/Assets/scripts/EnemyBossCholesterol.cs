@@ -138,6 +138,7 @@ public class EnemyBossCholesterol : MonoBehaviour
         if (isDead)
             return;
 
+      
         currentHealth -= damage;
         slider.value = currentHealth / maxHealth * 100;
         Debug.Log(currentHealth);
@@ -146,13 +147,13 @@ public class EnemyBossCholesterol : MonoBehaviour
         {
             isDead = true;
             //SpawnPlatforms();
-            //anim.SetTrigger("sugar_death");
+            anim.SetTrigger("cholesterol_death");
             StartCoroutine(DieWithBuffer());
         }
         else if (currentHealth > 0)
         {
             // Play hurt animation
-            //anim.SetTrigger("sugar_hurt");
+            anim.SetTrigger("cholesterol_hurt");
         }
     }
 
@@ -161,7 +162,7 @@ public class EnemyBossCholesterol : MonoBehaviour
         this.enabled = false;
         // Introduce a buffer time before calling Die()
         GetComponent<Collider2D>().enabled = false;
-        yield return new WaitForSeconds(1.05f);
+        yield return new WaitForSeconds(1.5f);
 
         Die();
     }
