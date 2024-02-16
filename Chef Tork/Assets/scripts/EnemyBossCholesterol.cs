@@ -59,7 +59,7 @@ public class EnemyBossCholesterol : MonoBehaviour
                     if (elapsedTime >= timerDuration)
                     {
                         anim.SetTrigger("cholesterol_throw");
-                        Invoke("Shoot", 0.83f);
+                        Invoke("Shoot", 1f);
                         startTime = Time.time;
                         wave++;
                         wave++;
@@ -70,7 +70,7 @@ public class EnemyBossCholesterol : MonoBehaviour
                     if (wave == 2 && elapsedTime >= timerDuration)
                     {
                         anim.SetTrigger("cholesterol_jump");
-                        Invoke("Stomp", 1f);
+                        Invoke("Stomp", 1.35f);
                         startTime = Time.time;
                         wave++;
                     }
@@ -78,7 +78,7 @@ public class EnemyBossCholesterol : MonoBehaviour
                     else if (wave == 3 && elapsedTime >= timerDuration)
                     {
                         anim.SetTrigger("cholesterol_jump");
-                        Invoke("Stomp", 1f);
+                        Invoke("Stomp", 1.35f);
                         startTime = Time.time;
                         wave++;
                     }
@@ -86,7 +86,7 @@ public class EnemyBossCholesterol : MonoBehaviour
                     else if ((wave == 4 && elapsedTime >= timerDuration))
                     {
                         anim.SetTrigger("cholesterol_throw");
-                        Invoke("Shoot", 0.83f);
+                        Invoke("Shoot", 1f);
                         startTime = Time.time;
                         wave = 0;
 
