@@ -11,6 +11,7 @@ TagManager:
   - ScreenShake
   - Boss
   - Apple
+  - AppleCountTag
   layers:
   - Default
   - TransparentFX
