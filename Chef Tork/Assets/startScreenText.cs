@@ -7,6 +7,14 @@ public class startScreenText : MonoBehaviour
     public float levelTitleTime = 3f;
     public GameObject StartCanvas;
 
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.U))
+        {
+            RemoveStartText();
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         // Check if the entering collider belongs to the player
@@ -16,7 +24,7 @@ public class startScreenText : MonoBehaviour
         }
     }
 
-        void RemoveStartText()
+    void RemoveStartText()
     {
         StartCanvas.SetActive(false);
     }
