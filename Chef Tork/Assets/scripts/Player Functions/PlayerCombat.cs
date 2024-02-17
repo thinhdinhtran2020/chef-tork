@@ -17,6 +17,7 @@ public class PlayerCombat : MonoBehaviour
     public float fireRate = 60f;
     float nextMeleeTime = 0f;
     float nextShootTime = 0f;
+    public GameObject Player;
 
     public Transform firePoint;
  //   public GameObject bulletPrefab;
@@ -91,6 +92,7 @@ public class PlayerCombat : MonoBehaviour
     void Melee(string animationTrigger)
     {
         anim.SetTrigger(animationTrigger);
+        Vector2 knockbackDirection = new Vector2(knockbackDirectionX, 0f).normalized;
         //for attack animation^
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(meleePoint.position, meleeRange, enemyLayers);
@@ -107,17 +109,10 @@ public class PlayerCombat : MonoBehaviour
             }
             else if(enemy.GetComponent<Enemy>() != null)
             {
-                enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+                enemy.GetComponent<Enemy>().TakeMeleeDamage(attackDamage, Player);
             }
         }
 
-        /*
-        foreach (Collider2D enemy in hitEnemies)
-        {
-           enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
-           enemy.GetComponent<EnemyBoss>().TakeDamage(attackDamage);
-        }
-        */
     }
     
     void Shoot()

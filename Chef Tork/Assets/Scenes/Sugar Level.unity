@@ -1248,6 +1248,72 @@ Transform:
   - {fileID: 411506268}
   m_Father: {fileID: 1561346561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &189815624 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2167275722439146752, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
+  m_PrefabInstance: {fileID: 7490631208281499743}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &189815627 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 868246534429039260, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
+  m_PrefabInstance: {fileID: 7490631208281499743}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189815624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e91bc49416af3584cbb10e5b599fae71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &189815630 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 5939668197439199850, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
+  m_PrefabInstance: {fileID: 7490631208281499743}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &189815632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189815624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96725d104a5aabc42a1256d7215e5f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 189815630}
+  strength: 60
+  delay: 0.15
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 189815627}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 189815627}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &197601941
 GameObject:
   m_ObjectHideFlags: 0
@@ -3887,7 +3953,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2167275722439146752, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1896131431}
   m_SourcePrefab: {fileID: 100100000, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
 --- !u!1001 &452252224
 PrefabInstance:
@@ -4514,6 +4583,7 @@ GameObject:
   - component: {fileID: 518406494}
   - component: {fileID: 518406499}
   - component: {fileID: 518406500}
+  - component: {fileID: 518406501}
   m_Layer: 7
   m_Name: Enemy_slime1
   m_TagString: Enemy
@@ -4705,6 +4775,51 @@ MonoBehaviour:
   target: {fileID: 0}
   coll: {fileID: 0}
   healthBar: {fileID: 1055118034}
+--- !u!114 &518406501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518406493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96725d104a5aabc42a1256d7215e5f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 518406495}
+  strength: 60
+  delay: 0.15
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 518406499}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 518406499}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4857,6 +4972,7 @@ GameObject:
   - component: {fileID: 542157417}
   - component: {fileID: 542157416}
   - component: {fileID: 542157415}
+  - component: {fileID: 542157421}
   m_Layer: 7
   m_Name: Enemy_slime1
   m_TagString: Enemy
@@ -4947,7 +5063,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 4
-  m_LinearDrag: 0
+  m_LinearDrag: 3
   m_AngularDrag: 0.05
   m_GravityScale: 6
   m_Material: {fileID: 0}
@@ -5048,6 +5164,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &542157421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542157413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96725d104a5aabc42a1256d7215e5f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 542157418}
+  strength: 60
+  delay: 0.15
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 542157416}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 542157416}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!4 &546642490 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1380350397063894935, guid: 7533b84c6880c8640a9679834d8f71f9, type: 3}
@@ -6545,6 +6706,7 @@ GameObject:
   - component: {fileID: 678614228}
   - component: {fileID: 678614227}
   - component: {fileID: 678614226}
+  - component: {fileID: 678614232}
   m_Layer: 7
   m_Name: Enemy_slime2
   m_TagString: Enemy
@@ -6736,6 +6898,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &678614232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678614224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96725d104a5aabc42a1256d7215e5f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 678614230}
+  strength: 60
+  delay: 0.15
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 678614228}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 678614228}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1001 &681104421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8251,6 +8458,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 335757772}
+    - target: {fileID: 5465810142222847406, guid: 6859612cd755e364e853e2343f78f707, type: 3}
+      propertyPath: knockbackForce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465810142222847406, guid: 6859612cd755e364e853e2343f78f707, type: 3}
+      propertyPath: knockbackDuration
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8322,6 +8537,7 @@ GameObject:
   - component: {fileID: 841609740}
   - component: {fileID: 841609739}
   - component: {fileID: 841609738}
+  - component: {fileID: 841609744}
   m_Layer: 7
   m_Name: Enemy_slime1
   m_TagString: Enemy
@@ -8513,6 +8729,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &841609744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841609736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96725d104a5aabc42a1256d7215e5f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 841609741}
+  strength: 60
+  delay: 0.15
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 841609739}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 841609739}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &844186979
 GameObject:
   m_ObjectHideFlags: 0
@@ -8702,6 +8963,7 @@ GameObject:
   - component: {fileID: 856909933}
   - component: {fileID: 856909937}
   - component: {fileID: 856909938}
+  - component: {fileID: 856909939}
   m_Layer: 7
   m_Name: Enemy_slime2
   m_TagString: Enemy
@@ -8893,6 +9155,51 @@ MonoBehaviour:
   target: {fileID: 0}
   coll: {fileID: 0}
   healthBar: {fileID: 232481969}
+--- !u!114 &856909939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856909931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96725d104a5aabc42a1256d7215e5f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 856909935}
+  strength: 60
+  delay: 0.15
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 856909933}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 856909933}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1001 &859416795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9282,7 +9589,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2167275722439146752, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 962598128}
   m_SourcePrefab: {fileID: 100100000, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
 --- !u!1 &890986584
 GameObject:
@@ -10153,6 +10463,72 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7533b84c6880c8640a9679834d8f71f9, type: 3}
+--- !u!1 &962598120 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2167275722439146752, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
+  m_PrefabInstance: {fileID: 888766980}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &962598123 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 868246534429039260, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
+  m_PrefabInstance: {fileID: 888766980}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962598120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e91bc49416af3584cbb10e5b599fae71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &962598126 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 5939668197439199850, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
+  m_PrefabInstance: {fileID: 888766980}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &962598128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962598120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96725d104a5aabc42a1256d7215e5f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 962598126}
+  strength: 60
+  delay: 0.15
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 962598123}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 962598123}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1001 &963643130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11239,6 +11615,7 @@ GameObject:
   - component: {fileID: 1045245704}
   - component: {fileID: 1045245703}
   - component: {fileID: 1045245702}
+  - component: {fileID: 1045245708}
   m_Layer: 7
   m_Name: Enemy_slime2
   m_TagString: Enemy
@@ -11430,6 +11807,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1045245708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045245700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96725d104a5aabc42a1256d7215e5f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1045245706}
+  strength: 60
+  delay: 0.15
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1045245704}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1045245704}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1001 &1048413151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11507,6 +11929,7 @@ GameObject:
   - component: {fileID: 1050876183}
   - component: {fileID: 1050876182}
   - component: {fileID: 1050876181}
+  - component: {fileID: 1050876187}
   m_Layer: 7
   m_Name: Enemy_slime1
   m_TagString: Enemy
@@ -11698,6 +12121,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1050876187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050876179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96725d104a5aabc42a1256d7215e5f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1050876184}
+  strength: 60
+  delay: 0.15
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1050876182}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1050876182}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &1051862608
 GameObject:
   m_ObjectHideFlags: 0
@@ -13927,7 +14395,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2167275722439146752, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1758956351}
   m_SourcePrefab: {fileID: 100100000, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
 --- !u!1 &1215365819
 GameObject:
@@ -14391,6 +14862,7 @@ GameObject:
   - component: {fileID: 1266900968}
   - component: {fileID: 1266900967}
   - component: {fileID: 1266900966}
+  - component: {fileID: 1266900972}
   m_Layer: 7
   m_Name: Enemy_slime1
   m_TagString: Enemy
@@ -14582,6 +15054,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1266900972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266900964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96725d104a5aabc42a1256d7215e5f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1266900969}
+  strength: 60
+  delay: 0.15
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1266900967}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1266900967}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!4 &1269576569 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1380350397063894935, guid: 7533b84c6880c8640a9679834d8f71f9, type: 3}
@@ -35393,6 +35910,72 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7533b84c6880c8640a9679834d8f71f9, type: 3}
+--- !u!1 &1758956343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2167275722439146752, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
+  m_PrefabInstance: {fileID: 1211740221}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1758956346 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 868246534429039260, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
+  m_PrefabInstance: {fileID: 1211740221}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758956343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e91bc49416af3584cbb10e5b599fae71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &1758956349 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 5939668197439199850, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
+  m_PrefabInstance: {fileID: 1211740221}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1758956351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758956343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96725d104a5aabc42a1256d7215e5f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1758956349}
+  strength: 60
+  delay: 0.15
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1758956346}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1758956346}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &1761234441
 GameObject:
   m_ObjectHideFlags: 0
@@ -35552,6 +36135,7 @@ GameObject:
   - component: {fileID: 1770224378}
   - component: {fileID: 1770224377}
   - component: {fileID: 1770224376}
+  - component: {fileID: 1770224382}
   m_Layer: 7
   m_Name: Enemy_slime1
   m_TagString: Enemy
@@ -35743,6 +36327,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1770224382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770224374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96725d104a5aabc42a1256d7215e5f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1770224379}
+  strength: 60
+  delay: 0.15
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1770224377}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1770224377}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &1771376304
 GameObject:
   m_ObjectHideFlags: 0
@@ -36043,12 +36672,14 @@ MonoBehaviour:
   attackDamage: 40
   meleeRate: 2
   fireRate: 2
+  Player: {fileID: 170268229}
   firePoint: {fileID: 1005115640}
   bulletPrefabs:
   - {fileID: 5709918608874840495, guid: 7b741382fbbd8604aae1c5f70bd164bd, type: 3}
   - {fileID: 8626922592648561697, guid: 688370dd91d3d5a44b7b0d47a176e4e0, type: 3}
   - {fileID: 827530798852215236, guid: a9f5106b407722648b56eb05fa026a6e, type: 3}
   - {fileID: 6104140079313895020, guid: 50eca8da5482311428c99090fac1da20, type: 3}
+  knockbackDirectionX: 1
 --- !u!114 &1796217732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37355,6 +37986,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1380350397063894935, guid: 7533b84c6880c8640a9679834d8f71f9, type: 3}
   m_PrefabInstance: {fileID: 1886323196}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1896131423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2167275722439146752, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
+  m_PrefabInstance: {fileID: 445234244}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1896131426 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 868246534429039260, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
+  m_PrefabInstance: {fileID: 445234244}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896131423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e91bc49416af3584cbb10e5b599fae71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &1896131429 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 5939668197439199850, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
+  m_PrefabInstance: {fileID: 445234244}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1896131431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896131423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96725d104a5aabc42a1256d7215e5f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1896131429}
+  strength: 60
+  delay: 0.15
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1896131426}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1896131426}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1001 &1920820575
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39301,6 +39998,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3809905421789797540, guid: 71220aefc3bdb204daaaf96c0806109b, type: 3}
+      propertyPath: runSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809905421789797540, guid: 71220aefc3bdb204daaaf96c0806109b, type: 3}
       propertyPath: PauseMenu
       value: 
       objectReference: {fileID: 1233422977}
@@ -40396,6 +41097,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5939668197439199850, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6891275023549667237, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -40407,7 +41112,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2167275722439146752, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 189815632}
   m_SourcePrefab: {fileID: 100100000, guid: 1e269308eb51aec4e9f1f655a7e1a064, type: 3}
 --- !u!1001 &7669906355680740529
 PrefabInstance:

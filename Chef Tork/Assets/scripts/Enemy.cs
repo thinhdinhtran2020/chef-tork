@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using UnityEngine.UI;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class Enemy : MonoBehaviour
 {
@@ -19,7 +19,6 @@ public class Enemy : MonoBehaviour
     {
         currentHealth = maxHealth;
         Transform commonParent = transform.parent;
-
         healthBar = commonParent.GetComponentInChildren<FloatingHealthBar>();
     }
 
@@ -35,6 +34,29 @@ public class Enemy : MonoBehaviour
             Die();
         }
     }
+
+    public void TakeMeleeDamage(int damage, GameObject sender)
+    {
+        currentHealth -= damage;
+        healthBar.UpdateHealthBar(currentHealth, maxHealth);
+        EnemyKnockBack enemyScript = GetComponent<EnemyKnockBack>();
+        Debug.Log(currentHealth);
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+
+        if (Entity.activeSelf && enemyScript != null)
+        {
+            GetComponent<EnemyKnockBack>().PlayFeedback(sender);
+        }
+        // Play hurt animation
+
+
+
+    }
+
     void Die()
     {
         Debug.Log("enemy die");
