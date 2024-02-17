@@ -14,7 +14,9 @@ public class PlayerCombat : MonoBehaviour
     public int attackDamage = 40;
 
     public float meleeRate = 60f;
+    public float fireRate = 60f;
     float nextMeleeTime = 0f;
+    float nextShootTime = 0f;
 
     public Transform firePoint;
  //   public GameObject bulletPrefab;
@@ -24,6 +26,8 @@ public class PlayerCombat : MonoBehaviour
     private int comboMeleeCount = 0; //keeps track of player spamming melee button
     private float meleeInputCooldown = 0.2f;
     private float lastMeleeInputTime = 0f;
+    private float lastFireInputTime = 0f;
+    public float knockbackDirectionX = 1f;
 
     private void Awake()
     {
@@ -71,7 +75,15 @@ public class PlayerCombat : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X))
         {
-            Shoot();
+            if (Time.time >= nextShootTime)
+            {
+                if (Input.GetKeyDown(KeyCode.X))
+                {
+                    Shoot();
+                    lastFireInputTime = Time.time;
+                    nextShootTime = Time.time + 1f / fireRate;
+                }
+            }
         }
     }
 
@@ -85,7 +97,6 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-
             Debug.Log("Hit Enemy: " + enemy.gameObject.name);
 
             // Check if the enemy is an instance of EnemyBoss

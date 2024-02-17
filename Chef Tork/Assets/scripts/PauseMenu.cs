@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
     public GameObject optionMenuUI;
+    public GameObject savedGameText;
 
 
     // Update is called once per frame
@@ -32,7 +33,17 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+    }
 
+    void SaveGame()
+    {
+        savedGameText.SetActive(true);
+        Invoke("RemoveSavedGameText", 3f);
+    }
+
+    void RemoveSavedGameText()
+    {
+        savedGameText.SetActive(false);
     }
 
     void Pause()
@@ -47,14 +58,18 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         optionMenuUI.SetActive(true);
-
-
     }
 
     public void Resume()
     {
+        RemoveSavedGameText();
         ResumeGame();
-    }    
+    }
+
+    public void Save()
+    {
+        SaveGame();
+    }
 
     public void QuitGame()
     {
