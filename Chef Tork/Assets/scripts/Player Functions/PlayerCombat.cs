@@ -20,8 +20,9 @@ public class PlayerCombat : MonoBehaviour
     public GameObject Player;
 
     public Transform firePoint;
- //   public GameObject bulletPrefab;
+    //public GameObject bulletPrefab;
     public GameObject[] bulletPrefabs;
+    [SerializeField] private AudioSource shootEffect; //For shooting sound effect
 
     private PlayerController playerController;
     private int comboMeleeCount = 0; //keeps track of player spamming melee button
@@ -80,6 +81,7 @@ public class PlayerCombat : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.X))
                 {
+                    shootEffect.Play(); //Play shoot effect
                     Shoot();
                     lastFireInputTime = Time.time;
                     nextShootTime = Time.time + 1f / fireRate;
